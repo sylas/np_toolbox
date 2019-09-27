@@ -59,7 +59,10 @@ def select_file(extension, display=True, prompt="Select file: "):
     # Collect the filename
     idx = -1
     while idx not in range(len(input_filenames)+1):
-        idx = int(input(prompt))
+        try:
+            idx = int(input(prompt))
+        except ValueError:
+            idx = 0
     if idx == 0:
         print("Exiting...")
         sys.exit()

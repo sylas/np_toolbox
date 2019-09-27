@@ -13,7 +13,10 @@ modules = \
 }
 
 if len(sys.argv) >= 2:
-    choice = int(sys.argv[1])
+    try:
+        choice = int(sys.argv[1])
+    except ValueError:
+        choice = 0
     if not choice in modules:
         print("Wrong module number, exiting...")
         sys.exit()                
@@ -28,7 +31,10 @@ else:
     print()
     choice = -1
     while not choice in modules and choice != 0:
-        choice = int(input("Enter your choice: "))
+        try:
+            choice = int(input("Enter your choice: "))
+        except ValueError:
+            choice = 0
         
     if choice == 0:
         print("Exiting...")
