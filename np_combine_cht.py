@@ -9,7 +9,9 @@ def main():
     - u: unpolarize: |E| = sqrt(0.5|E_TE|^2 + 0.5|E_TM|^2) (e.g. EZ and HZ polarized fluxes)
     - a: calculate absorbance: E = log10(E1/E2) (e.g. input flux / output flux)
     - t: calculate transmitance: E = E2/E1 (e.g. output flux / input flux)
+
     Shortcut call: np [...] [s|u|a|t]
+
     Input:  
            Two .cht files from Omnisim (2D/1D).
     Output:
@@ -106,7 +108,8 @@ def main():
             if x.strip() == "":
                 continue
 
-            if  x != line2splitted[0]:
+            #if  x != line2splitted[0]:
+            if round(float(x),3) != round(float(line2splitted[0]),3):
                 print("x-axis is different in the input files, exiting...")
                 sys.exit()    
             if graph == "2D":

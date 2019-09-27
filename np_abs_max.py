@@ -7,7 +7,7 @@ from np_ps import set
 
 def main():
     '''
-    Calculate maxima of absorption spectra given in the the *.txt or .cht files.
+    Calculates maxima of absorption spectra given in the the *.txt or .cht files.
     
     Input: 
            All .cht and .txt files from current directory, containing sensor data from Omnisim.           
