@@ -1,15 +1,17 @@
-# Toolbox for running scripts for Omnisim
+'''
+Toolbox for running scripts for Omnisim
+'''
 
 import sys
 
 modules = \
 {\
-1:["np_change_plane","Change plane from xy to xz (and some other options) in the input file"],\
-2:["np_truncate","Truncate the spheres by some factor in the input file"],\
+1:["np_change_plane","Change plane from xy to xz (and some other options)"],\
+2:["np_truncate","Truncate the spheres by some factor"],\
 3:["np_txt_to_cht","Convert .txt sensor data into the .cht format"],\
 4:["np_combine_cht","Combine two .cht files to substract data, unpolarize, calculate absorbance and transmitance"],\
-5:["np_abs_max","Finds maximum in the input .cht/.txt file (e.g. with absorbance)"],\
-6:["np_plot_cht","Plots 1D data from the .cht file, and saves plot in the .png format"],\
+5:["np_abs_max","Find local maxima in the .cht/.txt files with absorbance, and plot the result if possible"],\
+6:["np_plot_cht","Plot (and save in the .png format) the .cht file"],\
 }
 
 if len(sys.argv) >= 2:

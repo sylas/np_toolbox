@@ -1,4 +1,4 @@
-from builtins import input
+#from builtins import input
 import os, sys
 
 def set(name, value, typeof=None):
@@ -13,14 +13,26 @@ def set(name, value, typeof=None):
     if (ans == ""):
         return value
     if "int" in typeof:
-        new_value = int(ans)
+        try:
+            new_value = int(ans)
+        except ValueError:
+            new_value = value
+            print("Wrong number entered, keeping the original value.")
     elif "float" in typeof:
-        new_value = float(ans)
+        try:
+            new_value = float(ans)
+        except ValueError:
+            new_value = value
+            print("Wrong number entered, keeping the original value.")
     elif "str" in typeof:
         new_value = str(ans)
     elif "bool" in typeof:
         new_value = ans
-    print ("Set <{}> {} = {}".format(typeof, name, new_value))
+        if new_value not in ["True", "False"]:
+            new_value = value
+            print("Wrong boolean entered, keeping the original value.")            
+    if new_value != value:
+        print ("Set <{}> {} = {}".format(typeof, name, new_value))
     return new_value
 
 def select_file(extension, display=True, prompt="Select file: "):

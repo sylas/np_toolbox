@@ -7,7 +7,7 @@ from np_ps import set
 
 def main():
     '''
-    Calculates maxima of absorption spectra given in the the *.txt or .cht files.
+    Finds maxima of the absorption spectra given in the the *.txt or .cht files.
     
     Input: 
            All .cht and .txt files from current directory, containing sensor data from Omnisim.           
@@ -24,8 +24,8 @@ def main():
 
     # Maximum will be searched in range [xminint, xmaxint] with accuracy intstep
     # (by interpolating data in this range with given step, then taking the maximum)
-    xminint = 305
-    xmaxint = 600
+    xminint = 301
+    xmaxint = 699
 
     print("Program looks for maximum in the [xmin, xmax] range.")
     print("Current xmin = {}, xmax = {}".format(xminint, xmaxint))
@@ -100,6 +100,10 @@ def main():
             # Skipping file
             continue
 
+        # Check, if the dataset is the absorbance
+        if data[1].find("relative") == -1 and data[1].find("bsorbance") == -1:
+            # Skipping file
+            continue
         
         print("Analyzing file {},".format(filename)),
         
