@@ -47,8 +47,8 @@ def main():
         index1 = data[4].find('"')+1
         index2 = data[4].find('"',index1)
         plot_x_label = data[4][index1:index2]
-        plot_x_label = plot_x_label.replace("/fs","(fs)")
-        plot_x_label = plot_x_label.replace("/um","(µm)")
+        plot_x_label = plot_x_label.replace(" /fs"," (fs)")
+        plot_x_label = plot_x_label.replace(" /um"," (µm)")
 
         # y label
         index1 = data[5].find('"')+1
@@ -57,8 +57,9 @@ def main():
         plot_y_label = plot_y_label.replace("/V/m","(V/m)")
         plot_y_label = plot_y_label.replace("/A/m","(A/m)")
         plot_y_label = plot_y_label.replace("/J/m","(J/m)")
-        plot_y_label = plot_y_label.replace("/W","(W)")
-        plot_y_label = plot_y_label.replace("Positive flux /dB","Absorbance (%/10)")
+        plot_y_label = plot_y_label.replace(" /W/m"," (W/m)")
+        plot_y_label = plot_y_label.replace(" /W/um"," (W/µm)")
+        plot_y_label = plot_y_label.replace(" /W"," (W)")
 
         # Read data
         for i in range(10,len(data)):

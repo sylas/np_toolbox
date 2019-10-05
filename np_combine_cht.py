@@ -89,9 +89,11 @@ def main():
             if option == "a":
                 line1 = line1.replace("In positive flux relative to Out positive flux from FDTD", "Absorbance")
                 line1 = line1.replace("In positive flux from FDTD", "Absorbance")
-                line1 = line1.replace("/um", "(µm)")
                 line1 = line1.replace("Positive flux /W/um", "Absorbance (%/100)")
-                line1 = line1.replace("Positive flux /dB", "Absorbance (%/100)")
+                line1 = line1.replace("Positive Flux /W/um", "Absorbance (%/100)")
+                line1 = line1.replace("Positive flux /dB", "Absorbance (%/10)")
+                line1 = line1.replace("Positive Flux /dB", "Absorbance (%/10)")
+                line1 = line1.replace(" /um", " (µm)")
             file.write(line1)
         else:    
             if graph == "2D":

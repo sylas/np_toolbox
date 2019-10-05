@@ -6,6 +6,7 @@ import sys
 
 modules = \
 {\
+0:["np_make_material_database","Make material database using the refractive index"],\
 1:["np_change_plane","Change plane from xy to xz (and some other options)"],\
 2:["np_truncate","Truncate the spheres by some factor"],\
 3:["np_txt_to_cht","Convert .txt sensor data into the .cht format"],\
