@@ -225,13 +225,16 @@ def main():
                 plt.plot(var_list, xmax_reg)
             
             if var_name in ["trunc", "inglass"]:
-                plot_title = "Position of the maximum of the absorption spectra \n for the truncated spheres of size 50 nm on glass"    
+                plot_title = \
+                "Position of the maximum of the absorption spectra \n for the truncated spheres of size 50 nm on glass"    
                 plot_xlabel = "Sphere truncate factor (%)\n(0% - full sphere; 50% - half sphere, etc.)"
             elif var_name == "np_size":    
-                plot_title = "Position of the maximum of the absorption spectra \n for the spheres of variable size in air"        
+                plot_title = \
+                "Position of the maximum of the absorption spectra \n for the spheres of variable size in air"        
                 plot_xlabel = "Sphere size (µm)"
             elif var_name == "al2o3":    
-                plot_title = "Position of the maximum of the absorption spectra \n for the spheres covered by Al2O3 layer"
+                plot_title = \
+                "Position of the maximum of the absorption spectra \n for the spheres covered by Al2O3 layer"
                 plot_xlabel = "Thickness of the Al2O3 layer (µm)"
             else:
                 plot_title = "Position of the maximum of the absorption spectra"    

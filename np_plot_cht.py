@@ -41,7 +41,8 @@ def main():
         index1 = data[1].find('"')+1
         index2 = data[1].find('"',index1)
         plot_title = data[1][index1:index2]
-        plot_title = plot_title.replace("In positive flux relative to Out positive flux from FDTD","Absorbance ") # Keep the space (hack ;) )!
+        plot_title = plot_title.replace("In positive flux relative to Out positive flux from FDTD","Absorbance ") 
+        # Keep the space (hack ;) )!
 
         # x label
         index1 = data[4].find('"')+1
@@ -177,7 +178,8 @@ def main():
             norm = mpl.colors.PowerNorm(gamma=gamma)
 
             plt.clf() # Clear the previous graph
-            plt.imshow(ztable, origin="lower", norm=norm, cmap='hot', extent=extent_data, interpolation='nearest', aspect='auto')
+            plt.imshow(ztable, origin="lower", norm=norm, cmap='hot', extent=extent_data, interpolation='nearest', 
+                        aspect='auto')
             plt.colorbar().set_label(plot_z_label)
             plt.xlabel(plot_x_label)
             plt.ylabel(plot_y_label)

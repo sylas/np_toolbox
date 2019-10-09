@@ -113,7 +113,8 @@ def main():
                 x = -x + x_max
                 
             # addellipsoid     FUNCTION ( layer, z, x, angle, y, sizez, sizex, sizey )
-            newline = 'f.Exec("app.subnodes[{0}].subnodes[{1}].fsdevice.addellipsoid({2},{3},{4},{5},{6},{7},{8},{9})")\n'\
+            newline = \
+            'f.Exec("app.subnodes[{0}].subnodes[{1}].fsdevice.addellipsoid({2},{3},{4},{5},{6},{7},{8},{9})")\n'\
             .format(project, device, layer, z, x, angle, y, sizez, sizex, sizey)
             
             file.write(newline)
